@@ -1,14 +1,14 @@
 interface ColumnProps {
   num: number;
-  key: number
+  index: number
 }
 
-const Column: React.FC<ColumnProps> = ({num, key}) => {
+const Column: React.FC<ColumnProps> = ({num, index}) => {
 
 
   
-  return (<div key={key} style={{height: `${num}px`}} className="bg-blue-500 w-4">
-    <p className="rotate-90 text-white">{num}</p>
+  return (<div key={index} style={{height: `${num}px`}} className="bg-blue-400 w-2">
+    <p className="rotate-90 text-white text-xs">{num}</p>
   </div>)
 };
 
