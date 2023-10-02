@@ -12,7 +12,7 @@ const ColumnGenerator: React.FC<columnGeneratorProps> = ({
       {nums.map((num, index) => (
         <div
           key={index}
-          style={{ height: `${num}px` }}
+          style={{ height: `${num/2}px` }}
           className="bg-blue-400 w-2"
         >
           <p className="rotate-90 text-white text-xs">{num}</p>
