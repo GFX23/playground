@@ -1,12 +1,15 @@
 import Column from "./column";
+import { useEffect, useState } from "react";
+import { timeout } from "../utils/mergeSort";
 
 interface columnGeneratorProps {
   nums: number[];
 }
 
-const ColumnGenerator: React.FC<columnGeneratorProps> = ({
-  nums,
+const ColumnGenerator: React.FC<columnGeneratorProps> = ({nums
+  ,
 }): React.ReactNode => {
+
   return (
     <div className="flex flex-row items-end h-5/6">
       {nums.map((num, index) => (
@@ -17,7 +20,8 @@ const ColumnGenerator: React.FC<columnGeneratorProps> = ({
         >
           <p className="rotate-90 text-white text-xs">{num}</p>
         </div>
-      ))}
+        )
+      )}
     </div>
   );
 };

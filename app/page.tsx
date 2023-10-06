@@ -4,7 +4,6 @@ import Button from "./components/button";
 import { useState } from "react";
 import ColumnGenerator from "./components/columnGenerator";
 import { mergeSort, timeout } from "./utils/mergeSort";
-import SortedColumnGenerator from "./components/sortedColumnGenerator";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
@@ -20,7 +19,7 @@ export default function Home() {
   };
 
   const sort = async (nums: number[]): Promise<void> => {
-    await mergeSort(nums, setSortedNums);
+    await mergeSort(nums, setSortedNums, sortedNums);
     console.log("merge finished")
   };
 
@@ -34,6 +33,7 @@ export default function Home() {
     }
 
   return (
+    <>
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
       <p className="text-4xl text-red-400">Welcome to sorting zone!</p>
       <ColumnGenerator nums={nums} />
@@ -43,5 +43,6 @@ export default function Home() {
         <Button onClick={() => sort(nums)} name="Sort them!" />
       </div>
     </main>
+    </>
   );
 }

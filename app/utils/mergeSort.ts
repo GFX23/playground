@@ -4,7 +4,8 @@ export function timeout(delay: number): Promise<void> {
 
 export const mergeSort = async (
   array: number[],
-  updateState: React.Dispatch<React.SetStateAction<number[]>>
+  updateState: React.Dispatch<React.SetStateAction<number[]>>,
+  sortedNums: number[],
 ): Promise<number[]> => {
   // checking for single or none element in array, if true, theres nothing to sort
   if (array.length <= 1) {
@@ -16,15 +17,15 @@ export const mergeSort = async (
   const left: number[] = array.slice(0, middle);
   const right: number[] = array.slice(middle);
  
-  const leftResult = await mergeSort(left, updateState);
-  const rightResult = await mergeSort(right, updateState);
+  const leftResult = await mergeSort(left, updateState, sortedNums);
+  const rightResult = await mergeSort(right, updateState, sortedNums);
  
 
 
-  const result = await merge(array, leftResult, rightResult, updateState);
+  const result = await merge(array, leftResult, rightResult, sortedNums,updateState);
   //updateState(result)
   console.log("mergingSort", result)
-  await timeout(1000);
+  await timeout(100);
   return result
 
 };
@@ -33,6 +34,7 @@ const merge = async (
   array: number[],
   left: number[],
   right: number[],
+  sortedNums: number[],
   updateState: React.Dispatch<React.SetStateAction<number[]>>
 ): Promise<number[]> => {
   let i = 0;
@@ -56,9 +58,12 @@ const merge = async (
   }
 
   console.log("merge complete", array)
-  updateState(array);
+
+  if (array.length > sortedNums.length ) {
+    updateState(array);
+  }
 
 
-  await timeout(1000);
+  await timeout(100);
   return array
 };
