@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <main className="flex h-screen flex-col items-center justify-between p-10">
         <p className="text-4xl text-red-400">Welcome to sorting zone!</p>
         <ColumnGenerator nums={nums} />
         <ColumnGenerator nums={sortedNums} />
