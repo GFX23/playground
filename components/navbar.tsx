@@ -32,7 +32,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Card className="h-screen w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-screen w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/2 ring-2 rounded-none ring-gray-500">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           GFX23's Playground
@@ -116,20 +116,22 @@ const Sidebar = () => {
           </ListItem>
           <AccordionBody className="py-1">
             <List className="p-0">
-              <Link href="/reacthings/painter">
+              <Link href="/reacthings/element-adder">
                 <ListItem>
                   <ListItemPrefix>
                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                   </ListItemPrefix>
-                  Painter
+                  ELEMENT ADDER
                 </ListItem>
               </Link>
+              <Link href="/reacthings/to-do">
               <ListItem>
                 <ListItemPrefix>
                   <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                 </ListItemPrefix>
-                Products
+                TO-DO LIST
               </ListItem>
+              </Link>
             </List>
           </AccordionBody>
         </Accordion>

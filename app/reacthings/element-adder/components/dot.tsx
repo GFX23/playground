@@ -8,15 +8,14 @@ interface DotProps {
 const Dot: React.FC<DotProps> = ({ coordinate}): React.ReactNode => {
   const style: CSS.Properties = {
     position: "absolute",
-    top: `${coordinate[1]}px`,
-    left: `${coordinate[0]}px`,
-    transform: "translate(-5px, -5px)",
+    top: `${coordinate[1]-10}px`,
+    left: `${coordinate[0]-10}px`,
     height: "20px",
     width: "20px",
   }
   return (
-  <div style={style} className="clickme bg-purple-500 rounded-full ring-4 ring-yellow-500" />
+  <div style={style} className="clickme bg-blue-300 rounded-full ring-4 ring-opacity-75 ring-indigo-900 hover:animate-pulse " />
   );
 };
 
-export default Dot;
+export default Dot; 
