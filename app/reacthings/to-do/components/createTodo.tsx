@@ -31,7 +31,7 @@ export const CreateToDo: React.FC<ICreateTodoProps> =({todos,setTodos}) => {
         <Option value="HIGH">HIGH</Option>
       </Select>
       <Input onChange={e => handleChange(e.target.value, "user")} color="blue" label="Your name" />
-      <Button onClick={() => handleAddTodo()} color="blue">ADD</Button>
+      <Button variant="outlined" fullWidth onClick={() => handleAddTodo()} color="blue">ADD</Button>
     </div>
   );
 }
